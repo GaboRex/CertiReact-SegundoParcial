@@ -21,11 +21,11 @@ _NoteTagger es una aplicación web que te permite organizar tus notas de manera 
 
 1. Debemos clonar nuestro repositorio ejecutando el comando:
 
-        git clone https://github.com/GaboRex/CertiReact-PrimerParcial.git
+        git clone https://github.com/GaboRex/CertiReact-SegundoParcial.git
 
 2. Con nuestro proyecto clonado abriremos nuestra terminal y entraremos a la ruta donde guardamos el proyecto.        
 
-        cd /ruta/EventFlow
+        cd /ruta/noteTagger
 
 3. Una vez en nuestro directorio del proyecto procederemos a ejecutar el comando para instalar todas las dependencias necesarias:
 
