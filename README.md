@@ -1,4 +1,4 @@
-# EventFlow-Proyecto Gestion de Eventos🎊🎉🎈
+# NoteTagger-Proyecto Gestion de Notas📓
 ## Objetivo y descripcion del proyecto.📌
 _NoteTagger es una aplicación web que te permite organizar tus notas de manera eficiente. Crea, guarda y filtra tus notas por categoría para acceder rápidamente a la información que necesitas. Además, ofrece almacenamiento local para acceder a tus notas sin conexión a internet. Simplifica tu vida y mantén tus pensamientos ordenados con NoteTagger._
 
