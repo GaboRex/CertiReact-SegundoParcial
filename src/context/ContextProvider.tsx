@@ -12,7 +12,6 @@ const NoteProvider = ({ children }) => {
 };
 
 const useStore = () => {
-  console.log("contexto", useContext(NoteContext));
   return useContext(NoteContext)[0];
 };
 const useDispatch = () => useContext(NoteContext)[1];
