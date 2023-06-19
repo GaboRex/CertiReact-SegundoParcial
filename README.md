@@ -6,23 +6,16 @@ _NoteTagger es una aplicación web que te permite organizar tus notas de manera 
 * Utilización de useState para controlar estados.
 * Utilización de useEffect.
 * Utiliza useMemo.
-* Utilización del almacenamiento local (localStorage) para almacenar los datos del formulario de manera persistente.
+* Utilización del almacenamiento local (localStorage).
 * Utiliza memo para optimizar el rendimiento de los componentes y evitar renderizados innecesarios.
 * Utiliza useRef.
+* Utiliza useContext.
 * Utiliza react-router-dom.
 * Implementa un formulario utilizando react-hook-form.
 * Utiliza Material-UI o Tailwind CSS para diseñar y estilizar la interfaz de usuario de la aplicación.
 * Implementa guards de autenticación utilizando react-router-dom para proteger las rutas que requieren autenticación.
 * Asegúrate de que el proyecto esté bien organizado en componentes reutilizables, siguiendo las mejores prácticas de estructura de carpetas y nombres de archivos.
 
-
-## Componentes.🤖
-Contamos con 4 componentes y nuestro componente padre:
-* [App](EventFlow/src/App.jsx)
-* [NavBar](EventFlow/src/components/Navbar.jsx) 
-* [EventoForm](EventFlow/src/components/EventoForm.jsx)
-* [ResumenEvento](EventFlow/src/components/ResumenEvento.jsx)
-* [Modal](EventFlow/src/components/Modal.jsx)
 
 ## Instalacion.🔧
 
@@ -42,6 +35,16 @@ Contamos con 4 componentes y nuestro componente padre:
         npm run dev
 
 5. Disfruta de nuestra interfaz amigable y registra todos tus eventos con nosotros.
+
+### **Login**
+![login](images/login.jpg)
+
+### **Notas**
+![notas](images/misnotas.jpg)
+
+### **Añadir notas**
+![anotas](images/a%C3%B1adirnota.jpg)
+
 
 
 ## Video-Presentacion🎞

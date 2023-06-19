@@ -23,7 +23,6 @@ export const LoginPage = () => {
       <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
           <Grid container justifyContent="center" mb={2}>
-            {/* Aquí se muestra la imagen del logo a la izquierda */}
             <img src={logo2} alt="Logo" style={{ width: '100%', height: 'auto', objectFit: 'contain' }} />
           </Grid>
         </Grid>
