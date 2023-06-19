@@ -3,23 +3,17 @@ import { Grid, TextField, Button, Typography, Link } from "@mui/material";
 import { Google } from "@mui/icons-material";
 import { AuthLayout } from "../layout/AuthLayout";
 import { useDispatch } from "../../context/ContextProvider";
-import { types } from "../../context/storeReducer";
-import { useState } from "react";
+import { types } from "../../context/noteReducer";
+import { useForm } from "react-hook-form";
+
+import logo2 from "../../assets/logo3.png"; // Importa la imagen del logo
 
 export const LoginPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const { register, handleSubmit, formState: { errors } } = useForm();
 
-  const handleLogin = (event) => {
-    event.preventDefault();
-
-    if (email.trim() === "" || password.trim() === "") {
-      alert("Por favor, complete todos los campos");
-      return;
-    }
-
+  const handleLogin = (data) => {
     dispatch({ type: types.login });
     navigate("/");
   };
@@ -27,9 +21,15 @@ export const LoginPage = () => {
   return (
     <AuthLayout title="Bienvenido a NoteTagger">
       <Grid container spacing={2}>
-        <Grid item xs={12}>
-          <form onSubmit={handleLogin}>
-            <Grid container spacing={2}>
+        <Grid item xs={12} md={6}>
+          <Grid container justifyContent="center" mb={2}>
+            {/* Aquí se muestra la imagen del logo a la izquierda */}
+            <img src={logo2} alt="Logo" style={{ width: '100%', height: 'auto', objectFit: 'contain' }} />
+          </Grid>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <form onSubmit={handleSubmit(handleLogin)}>
+            <Grid container spacing={2} justifyContent="center" alignItems="center">
               <Grid item xs={12}>
                 <TextField
                   label="Email"
@@ -37,8 +37,9 @@ export const LoginPage = () => {
                   placeholder="email@gmail.com"
                   fullWidth
                   variant="outlined"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  {...register("email", { required: "Campo obligatorio", pattern: { value: /^\S+@\S+$/i, message: "Email inválido" } })}
+                  error={!!errors.email}
+                  helperText={errors.email?.message}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -48,16 +49,17 @@ export const LoginPage = () => {
                   placeholder="Contraseña"
                   fullWidth
                   variant="outlined"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  {...register("password", { required: "Campo obligatorio" })}
+                  error={!!errors.password}
+                  helperText={errors.password?.message}
                 />
               </Grid>
-              <Grid item xs={12} md={6}>
+              <Grid item xs={12}>
                 <Button variant="contained" fullWidth type="submit">
                   Login
                 </Button>
               </Grid>
-              <Grid item xs={12} md={6}>
+              <Grid item xs={12}>
                 <Button
                   variant="contained"
                   startIcon={<Google />}

@@ -7,7 +7,7 @@ const initialValues = {
   auth: false,
 };
 
-const storeReducer = (state, action) => {
+const noteReducer = (state, action) => {
   switch (action.type) {
     case types.login:
       return {
@@ -26,4 +26,4 @@ const storeReducer = (state, action) => {
 
 export { initialValues, types };
 
-export default storeReducer;
+export default noteReducer;

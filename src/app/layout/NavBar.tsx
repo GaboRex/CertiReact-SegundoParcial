@@ -2,13 +2,13 @@ import React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import SearchBar from "../components/SearchBar";
+import logo from "../../assets/logo4.png";
 
 export default function NavBar({ toggle, filterCategory, onFilterCategoryChange, notes }) {
   const [auth, setAuth] = React.useState(true);
@@ -40,18 +40,9 @@ export default function NavBar({ toggle, filterCategory, onFilterCategoryChange,
           >
             <MenuIcon />
           </IconButton>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{
-              flexGrow: 1,
-              fontWeight: "bold",
-              textAlign: "center",
-            }}
-          >
-            NoteTagger
-          </Typography>
-          {/* Aquí se encuentra el componente SearchBar */}
+          <div style={{ flexGrow: 1, display: "flex", justifyContent: "center", alignItems: "center" }}>
+            <img src={logo} alt="Logo" style={{ height: 70 }} />
+          </div>
           <SearchBar
             filterCategory={filterCategory}
             onFilterCategoryChange={onFilterCategoryChange}

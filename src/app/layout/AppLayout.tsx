@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import  { useState, useEffect, useMemo } from "react";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
@@ -7,7 +7,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import HomeIcon from "@mui/icons-material/Home";
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 import NoteIcon from "@mui/icons-material/Note";
 import Grid from "@mui/material/Grid";
 import Note from "../components/Note";
@@ -93,14 +93,14 @@ export default function Layout() {
       <List>
         {[
           {
-            text: "Inicio",
-            icon: <HomeIcon />,
+            text: "Mis notas",
+            icon: <NoteIcon />,
             onClick: () => {
               setShowNote(false);
               setFilterCategory("");
             },
           },
-          { text: "Notas", icon: <NoteIcon />, onClick: handleNoteClick },
+          { text: "Añadir notas", icon: <AddCircleIcon />, onClick: handleNoteClick },
         ].map((item, index) => (
           <ListItem key={item.text} disablePadding>
             <ListItemButton onClick={item.onClick}>
@@ -128,8 +128,10 @@ export default function Layout() {
       {showNote && <Note saveNote={saveNote} selectedNote={selectedNote} />}
       {!showNote && (
         <div>
-          <div style={{ textAlign: "center" }}>
-            <h2 style={{ color: theme.palette.primary.main }}>Mis notas:</h2>
+          <div style={{ textAlign: "left" }}>
+            <h2 style={{ color: theme.palette.primary.main, marginLeft: "20px" }}>
+              Mis notas
+            </h2>
             <Button
               variant="contained"
               onClick={handleOpenModal}

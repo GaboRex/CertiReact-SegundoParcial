@@ -1,21 +1,21 @@
 import { createContext, useContext, useReducer } from "react";
-import storeReducer, { initialValues } from "./storeReducer";
+import storeReducer, { initialValues } from "./noteReducer";
 
-const StoreContext = createContext();
+const NoteContext = createContext();
 
-const StoreProvider = ({ children }) => {
+const NoteProvider = ({ children }) => {
   return (
-    <StoreContext.Provider value={useReducer(storeReducer, initialValues)}>
+    <NoteContext.Provider value={useReducer(storeReducer, initialValues)}>
       {children}
-    </StoreContext.Provider>
+    </NoteContext.Provider>
   );
 };
 
 const useStore = () => {
-  console.log("contexto", useContext(StoreContext));
-  return useContext(StoreContext)[0];
+  console.log("contexto", useContext(NoteContext));
+  return useContext(NoteContext)[0];
 };
-const useDispatch = () => useContext(StoreContext)[1];
+const useDispatch = () => useContext(NoteContext)[1];
 
-export { StoreContext, useStore, useDispatch };
-export default StoreProvider;
+export { NoteContext, useStore, useDispatch };
+export default NoteProvider;
